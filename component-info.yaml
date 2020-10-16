@@ -4,7 +4,7 @@ metadata:
   name: mlflow-project-example
   description: A collection of MLFlow experiments.
   annotations:
-    mlflow.org/experiments: "mnist image classification"
+    mlflow.org/experiment: 2
   tags:
     - machine-learning
 spec:
