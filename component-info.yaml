@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: mlflow-project-example
+  description: A collection of MLFlow experiments.
+  annotations:
+    mlflow.org/experiments: "mnist image classification"
+  tags:
+    - machine-learning
+spec:
+  type: other
+  lifecycle: experimental
+  owner: guest
