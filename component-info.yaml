@@ -8,6 +8,6 @@ metadata:
   tags:
     - machine-learning
 spec:
-  type: other
+  type: mlflow
   lifecycle: experimental
   owner: guest
