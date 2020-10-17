@@ -5,6 +5,7 @@ import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Conv2D, Dropout, Flatten, MaxPooling2D
 import mlflow
+import mlflow.keras
 
 from backstage_utils import (
     extract_experiment_id,
@@ -24,14 +25,14 @@ if __name__ == "__main__":
     mlflow.set_experiment(experiment_name=experiment_name)
 
     # Capture tensorflow metrics
-    mlflow.tensorflow.autolog()
+    mlflow.keras.autolog()
 
     with mlflow.start_run():
         print("STARTING RUN")
         mlflow.set_tags(
             {
                 EVALUATION_SET_TAG: "keras-mnist-test-set",
-                NOTE_TAG: "using the example from https://towardsdatascience.com/image-classification-in-10-minutes-with-mnist-dataset-54c35b77a38d",
+                NOTE_TAG: "using keras autolog instead of tensorflow",
             }
         )
 
@@ -70,7 +71,7 @@ if __name__ == "__main__":
         model.fit(x=x_train, y=y_train, epochs=10)
 
         # Model evaluation metrics (loss, accuracy) are
-        # already done via mlflow.tensorflow.autolog()
+        # already done via mlflow.keras.autolog()
 
         print("SAVING AND LOGGING ARTIFACT")
         model.save(f"{BASE_DIR}/outputs")
