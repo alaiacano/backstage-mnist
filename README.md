@@ -8,6 +8,6 @@ This will hold a few examples for training models and submitting them to the mlf
 
 With Backstage and the MLFlow server running, the `mnist_trainer` script will produce views like this:
 
-![run view preview 1](run-view1.png)
+![run view preview 1](run-view-1.png)
 
-![run view preview 2](run-view2.png)
+![run view preview 2](run-view-2.png)
