@@ -8,7 +8,7 @@ import mlflow
 import mlflow.keras
 
 from backstage_utils import (
-    extract_experiment_id,
+    extract_experiment_name,
     EVALUATION_SET_TAG,
     NOTE_TAG,
     TRACKING_URI,
@@ -17,7 +17,7 @@ from backstage_utils import (
 BASE_DIR = "/Users/adam/github/alaiacano/backstage-mnist"
 
 if __name__ == "__main__":
-    experiment_name = extract_experiment_id(f"{BASE_DIR}/component-info.yaml")
+    experiment_name = extract_experiment_name(f"{BASE_DIR}/component-info.yaml")
     if not experiment_name:
         print("No MLFlow Experiment name found. Exiting.")
         sys.exit(1)
