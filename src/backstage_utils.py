@@ -3,6 +3,7 @@ import yaml
 import mlflow
 from mlflow.entities import Experiment
 
+BASE_DIR = "/Users/adam/github/alaiacano/backstage-mnist"
 TRACKING_URI = "file:///Users/adam/github/scratch/mlflow-demo/mlruns"
 EVALUATION_SET_TAG: str = "mlflow.backstage.evaluation_set"
 NOTE_TAG: str = "mlflow.note.content"

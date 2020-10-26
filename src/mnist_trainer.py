@@ -1,3 +1,4 @@
+import datetime
 import sys
 import tensorflow as tf
 
@@ -9,12 +10,12 @@ import mlflow.keras
 
 from backstage_utils import (
     extract_experiment_name,
+    BASE_DIR,
     EVALUATION_SET_TAG,
     NOTE_TAG,
     TRACKING_URI,
 )
 
-BASE_DIR = "/Users/adam/github/alaiacano/backstage-mnist"
 
 if __name__ == "__main__":
     experiment_name = extract_experiment_name(f"{BASE_DIR}/component-info.yaml")
@@ -27,7 +28,7 @@ if __name__ == "__main__":
     # Capture tensorflow metrics
     mlflow.keras.autolog()
 
-    with mlflow.start_run():
+    with mlflow.start_run(run_name=f"Run on {str(datetime.datetime.now())}"):
         print("STARTING RUN")
         mlflow.set_tags(
             {
