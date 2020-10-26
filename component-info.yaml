@@ -4,7 +4,7 @@ metadata:
   name: mlflow-project-example
   description: A collection of MLFlow experiments.
   annotations:
-    mlflow.org/experiment: '7'
+    mlflow.org/experiment: '11'
   tags:
     - machine-learning
 spec:
