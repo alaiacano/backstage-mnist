@@ -7,6 +7,8 @@ metadata:
     mlflow.org/experiment: "2"
   tags:
     - machine-learning
+    - tensorflow
+    - keras
 spec:
   type: mlflow
   lifecycle: experimental

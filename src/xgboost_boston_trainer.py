@@ -35,8 +35,8 @@ if __name__ == "__main__":
         X = pd.DataFrame(boston.data, columns=boston.feature_names)
         y = pd.Series(boston.target)
 
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1)
-        mlflow.set_tag(EVALUATION_SET_TAG, "10 percent Split")
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25)
+        mlflow.set_tag(EVALUATION_SET_TAG, "25 percent Split")
 
         print("building regressor")
         regressor = xgb.XGBRegressor(
